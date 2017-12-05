@@ -1,0 +1,47 @@
+﻿
+<h1 class="text-center text-danger"> Delete Contact</h1>
+<br />
+<div class="row" ng-controller="DeleteController">
+    <div class="col-md-3 col-md-offset-1">
+        <h3 class="text-danger">Select Contact</h3>
+        <hr />
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                {{selectedItem}}
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li ng-repeat="a in conts">
+                    <a ng-click="dropboxitemselected(a)">{{a.contact_Id}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <form ng-show="isDeletedItemVisible">
+            <div class="form-group">
+                <label for="inputEmail">Name</label>
+                <input type="text" ng-model="Name" class="form-control input-lg" placeholder="Contact Name" disabled/>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail">Name</label>
+                <input type="text" ng-model="Phone_Num" class="form-control input-lg" placeholder="Contact Number"disabled />
+            </div>
+            <div class="form-group">
+                <label for="inputEmail">Name</label>
+                <input type="text" ng-model="Email" class="form-control input-lg" placeholder="Contact Email"disabled />
+            </div>
+            <div class="form-group">
+                <label for="inputEmail">Name</label>
+                <input type="text" ng-model="Address" class="form-control input-lg" placeholder="Contact Address"disabled />
+            </div>
+            <div class="form-group">
+                <label for="inputEmail">Name</label>
+                <input type="text" ng-model="City" class="form-control input-lg" placeholder="Contact City"disabled />
+            </div>
+            <button class="btn btn-primary form-control input-lg" ng-click="DeleteContact()">
+                <span class="glyphicon glyphicon-edit"></span> Delete Contact
+            </button>
+        </form>
+    </div>
+</div>

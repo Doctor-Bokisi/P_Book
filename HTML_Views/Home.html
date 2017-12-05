@@ -1,0 +1,32 @@
+﻿<div class="row" ng-controller="HomeController">
+
+    <h1 class="text-center text-danger">Contacts</h1>
+    <hr />
+    
+    <div class="row">
+       <div class="col-md-9 col-md-offset-1">
+           <input type="text" placeholder="Type to filter here" class="input-lg form-control" ng-model="txtFilter" />
+           <br />
+           <br />
+
+           <table class="table table-striped table-bordered">
+               <thead>
+                   <tr>
+                       <th>Name</th>
+                       <th>Phone Number</th>
+                       <th>Email</th>
+                       <th>Address</th>
+                       <th>City</th>
+                   </tr>
+               </thead>
+               <tr ng-repeat="a in cont| filter:txtFilter">
+                   <td>{{a.Name}}</td>
+                   <td>{{a.Phone_Num}}</td>
+                   <td>{{a.Email}}</td>
+                   <td>{{a.Address}}</td>
+                   <td>{{a.City}}</td>
+               </tr>
+           </table>
+       </div>
+    </div> 
+</div>
